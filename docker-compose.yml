@@ -41,18 +41,16 @@ services:
     links:
       - influxdb
 
-  # web:
-  #   #build: site
-  #   #container_name: c3wahlcomputer-web
-  #   image: php:7.3-apache
-  #   volumes:
-  #     - ./site:/var/www/html
-  #   environment:
-  #     INFLUXDB_URL: http://influxdb:8086
-  #   ports:
-  #     - "8080:80"
-  #   links:
-  #     - influxdb
+  web:
+    image: php:7.3-apache
+    volumes:
+      - ./site:/var/www/html
+    environment:
+      INFLUXDB_URL: http://influxdb:8086
+    ports:
+      - "127.0.0.1:8080:80"
+    links:
+      - influxdb
 
 volumes:
   influxdb-data:
