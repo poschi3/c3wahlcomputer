@@ -17,7 +17,8 @@ services:
     ports:
       - "127.0.0.1:3000:3000"
     environment:
-      INFLUXDB_URL: http://influxdb:8086
+      - INFLUXDB_URL=http://influxdb:8086
+      - GF_AUTH_ANONYMOUS_ENABLED=true
     links:
       - influxdb
 
