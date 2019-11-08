@@ -19,6 +19,7 @@ services:
     environment:
       - INFLUXDB_URL=http://influxdb:8086
       - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_SECURITY_ALLOW_EMBEDDING=true
     links:
       - influxdb
 
