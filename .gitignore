@@ -1,2 +1,6 @@
 data
 site/assets_backup
+blackbox/.venv
+blackbox/config.py
+__pycache__
+
