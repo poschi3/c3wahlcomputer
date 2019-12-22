@@ -32,3 +32,14 @@ buttons = [
         'led': 'GPIO21' #21
     }
 ]
+
+influxdb = {
+    'host': 'example.com',
+    'port': 443,
+    'ssl': True,
+    'verify_ssl': True,
+    'user': 'username',
+    'password': 'password',
+    'db': 'vote',
+    'device': 'terminal1'
+}
