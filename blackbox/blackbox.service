@@ -1,0 +1,14 @@
+[Unit]
+Description=Blackbox voting
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/c3wahlcomputer/blackbox
+#Environment=PYTHONPATH=/home/user/somedir
+ExecStart=/home/pi/c3wahlcomputer/blackbox/.venv/bin/python main.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
