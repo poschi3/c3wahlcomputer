@@ -6,6 +6,8 @@ from gpiozero import LED, Button, PWMLED
 from time import sleep
 from signal import pause
 from influxdb import InfluxDBClient
+import time
+import random
 
 class Influx:
     def __init__(self, config):
@@ -37,33 +39,51 @@ class Influx:
 
 
 class Voter:
-    def __init__(self, config, store):
+    def __init__(self, config, orga):
         self.config = config
-        self.store = store
+        self.orga = orga
 
         self.button = Button(self.config['button'])
         self.button.when_pressed = self.buttonPressed
         self.led = PWMLED(self.config['led'])
-#        self.led.source = self.button
 
-    def pulse(self):
-        self.led.pulse()
- 
     def buttonPressed(self):
         print("Pressed: " + self.config['name'])
-        self.store.vote(self.config['name'])
-#        self.led.blink()
-        pass # TODO REST
-
-influx = Influx(config.influxdb)
+        self.orga.vote(self)
 
 
-b = []
-for button in config.buttons:
-    b.append(Voter(button, influx))
+class Orga:
+    def __init__(self):
+        self.influx = Influx(config.influxdb)
 
-for but in b:
-    but.pulse()
+        self.buttons = []
+        for button in config.buttons:
+            self.buttons.append(Voter(button, self))
+
+    def pulse(self):
+        shuffeldButtons = self.buttons.copy()
+        random.shuffle(shuffeldButtons)
+        for button in shuffeldButtons:
+            time.sleep(0.2)
+            button.led.pulse()
+
+    def vote(self, actButton):
+        otherButtons = self.buttons.copy()
+        otherButtons.remove(actButton)
+        actButton.led.on()
+        for button in otherButtons:
+            button.led.off()
+
+        self.influx.vote(actButton.config['name'])
+
+        time.sleep(3)
+        self.pulse()
+
+
+
+
+orga = Orga()
+orga.pulse()
 
 pause()
 
