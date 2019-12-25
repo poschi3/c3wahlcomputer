@@ -2,8 +2,7 @@ Hi, I'm C3Wahlcomputer, your black box voting machine you can trust!
 
 Just submit your honest feelings and I'll take care of it!
 
-![Frot of C3Wahlcomputer](/img/front.jpg =50%)
-{: style="text-align: center;"}
+![Front of C3Wahlcomputer](/img/front.jpg){: style="text-align: center; width: 50%;"}
 
 # Highlights
 * Black box
