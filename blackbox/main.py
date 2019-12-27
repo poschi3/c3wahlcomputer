@@ -76,7 +76,7 @@ class Orga:
 
         self.influx.vote(actButton.config['name'])
 
-        time.sleep(3)
+        time.sleep(1)
         self.pulse()
 
 
