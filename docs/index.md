@@ -21,7 +21,7 @@ C3Walcomputer
 * Voting
 * Machine
 * Trust
-* Never forgots feelings
+* Never forgets feelings
 * [Results in realtime](https://result.c3wahl.computer/)
 * [Open source](https://github.com/poschi3/c3wahlcomputer), so you have to trust!
 
