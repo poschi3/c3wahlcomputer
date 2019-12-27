@@ -1,4 +1,6 @@
-# [📊 See Results](https://result.c3wahl.computer/)
+# [📊 See live results](https://result.c3wahl.computer/)
+
+![Results as bar chart](https://result.c3wahl.computer/render/d-solo/llfZk41Wk/start?orgId=1&refresh=5s&from=1577367090634&to=1577453490634&panelId=3&width=1000&height=500&tz=Europe%2FBerlin)
 
 # Infos
 
