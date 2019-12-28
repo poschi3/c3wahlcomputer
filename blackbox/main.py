@@ -8,6 +8,15 @@ from signal import pause
 from influxdb import InfluxDBClient
 import time
 import random
+import socket
+
+class Printer:
+    def __init__(self, config):
+        self.config = config
+    
+    def vote(self, voting):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+        sock.sendto(bytes(voting, "utf-8"), (config['host'], config['port']))
 
 class Influx:
     def __init__(self, config):
@@ -55,6 +64,7 @@ class Voter:
 class Orga:
     def __init__(self):
         self.influx = Influx(config.influxdb)
+        self.printer = Printer(config.printer)
 
         self.buttons = []
         for button in config.buttons:
@@ -75,6 +85,7 @@ class Orga:
             button.led.off()
 
         self.influx.vote(actButton.config['name'])
+        self.printer.vote(actButton.config['message'])
 
         time.sleep(1)
         self.pulse()
