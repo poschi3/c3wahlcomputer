@@ -1,6 +1,11 @@
-# [C3Wahlcomputer 📊 live results](https://result.c3wahl.computer/)
+<!-- # [C3Wahlcomputer 📊 live results](https://result.c3wahl.computer/)
 
 ![Result charts](https://result.c3wahl.computer/render/d-solo/llfZk41Wk/start?orgId=1&refresh=5s&panelId=3&width=1000&height=500&tz=Europe%2FBerlin)
+-->
+
+# C3Wahlcomputer results
+
+![Result charts](/img/snapshot.png)
 
 # Infos
 
