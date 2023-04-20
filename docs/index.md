@@ -13,9 +13,7 @@ Hi,
 
 I'm C3Wahlcomputer, the only black box voting machine you can trust!
 
-Just submit your honest feelings. I'll take care of it!!!11elf
-
-Find me at [Lebkuch.is assembly](https://36c3.c3nav.de/l/lebkuchis/).
+Just submit your honest feelings. I'll take care of it!
 
 Honestly,
 
@@ -27,7 +25,7 @@ C3Walcomputer
 * Machine
 * Trust
 * Never forgets feelings
-* [Results in realtime](https://result.c3wahl.computer/)
+* [Results in realtime](https://grafana.poschi.net/public-dashboards/2acf4368821b42e596a76794fc5011c8)
 * [Open source](https://github.com/poschi3/c3wahlcomputer), so you have to trust!
 
 ![Front of C3Wahlcomputer](/img/front.jpg)
